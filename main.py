@@ -1,10 +1,16 @@
 # Calorie Calculator 
 
 
+
 # START PROGRAM
+import tkinter as tk
+from tkinter import ttk
 
 # Create GUI window
+root = tk.Tk()
 # Set window title and size
+root.title("Calorie Calculator")
+root.geometry("420x600")
 
 # CREATE INPUT FIELDS
 
@@ -48,3 +54,5 @@
 
 # DISPLAY RESULT ON SCREEN
 
+# RUN PROGRAM
+root.mainloop()
