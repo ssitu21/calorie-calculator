@@ -15,8 +15,17 @@ root.geometry("420x600")
 # CREATE INPUT FIELDS
 
 # - Age input box
+tk.Label(root, text="Age").pack()
+age_entry = tk.Entry(root)
+age_entry.pack()
 # - Weight input box
+tk.Label(root, text="Weight (kg)").pack()
+weight_entry = tk.Entry(root)
+weight_entry.pack()
 # - Height input box
+tk.Label(root, text="Height (cm)").pack()
+height_entry = tk.Entry(root)
+height_entry.pack()
 
 # CREATE DROPDOWN (Activity level)'
 
