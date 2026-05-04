@@ -1,7 +1,5 @@
 # Calorie Calculator 
 
-
-
 # START PROGRAM
 import tkinter as tk
 from tkinter import ttk
@@ -29,10 +27,11 @@ height_entry.pack()
 
 # CREATE DROPDOWN (Activity level)'
 
-# - Inactive
-# - Light
-# - Moderate
-# - Active
+activity_var = tk.StringVar()
+activity_dropdown = ttk.Combobox(root, textvariable=activity_var)
+activity_dropdown['values'] = ("Inactive", "Light", "Moderate", "Active")
+activity_dropdown.current(0)
+activity_dropdown.pack()
 
 # CREATE RADIO BUTTONS (Goal)
 
