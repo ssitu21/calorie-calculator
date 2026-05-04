@@ -44,19 +44,27 @@ tk.Radiobutton(root, text="Gain weight", variable=goal_var, value="Gain").pack()
 # CREATE CALCULATE BUTTON
 
 # Shows results
+result_label = tk.Label(root, text="")
+result_label.pack()
 
 # WHEN BUTTON CLICKED
+def calculate():
+    try:
+        # - Get weight input
+        weight = float(weight_entry.get())
 
-# - Get weight input
-# - Calculate base calories = weight × 22
+        # - Calculate base calories = weight × 22
+        calories = weight * 22
 
-# IF goal = lose weight
+        # IF goal = lose weight
+        # subtract 300 calories
+        if goal_var.get() == "Lose":
+            calories -= 300
 
-# subtract 300 calories
-
-# IF goal = gain weight
-
-# add 300 calories
+        # IF goal = gain weight
+        # add 300 calories
+        elif goal_var.get() == "Gain":
+            calories += 300
 
 # APPLY ACTIVITY MULTIPLIER:
 # - Inactive → ×1.2
