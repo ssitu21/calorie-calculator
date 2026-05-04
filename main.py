@@ -1,6 +1,6 @@
 # Calorie Calculator 
 
-# START PROGRAM
+# START PROGRAM 
 import tkinter as tk
 from tkinter import ttk
 
@@ -8,7 +8,7 @@ from tkinter import ttk
 root = tk.Tk()
 # Set window title and size
 root.title("Calorie Calculator")
-root.geometry("420x600")
+root.geometry("320x465")
 
 # CREATE INPUT FIELDS
 
@@ -33,13 +33,17 @@ activity_dropdown['values'] = ("Inactive", "Light", "Moderate", "Active")
 activity_dropdown.current(0)
 activity_dropdown.pack()
 
-# CREATE RADIO BUTTONS (Goal)
+# CREATE RADIOBUTTONS (Goal)
 
-# - Lose weight
-# - Maintain weight
-# - Gain weight
+goal_var = tk.StringVar()
+goal_var.set("Maintain")
 
+tk.Radiobutton(root, text="Lose weight", variable=goal_var, value="Lose").pack()
+tk.Radiobutton(root, text="Maintain weight", variable=goal_var, value="Maintain").pack()
+tk.Radiobutton(root, text="Gain weight", variable=goal_var, value="Gain").pack()
 # CREATE CALCULATE BUTTON
+
+# Shows results
 
 # WHEN BUTTON CLICKED
 
