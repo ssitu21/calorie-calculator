@@ -66,22 +66,27 @@ def calculate():
         elif goal_var.get() == "Gain":
             calories += 300
 
-# APPLY ACTIVITY MULTIPLIER:
-# - Inactive → ×1.2
-# - Light → ×1.4
-# - Moderate → ×1.6
-# - Active → ×1.8
-    if activity_var.get() == "Inactive":
+        # APPLY ACTIVITY MULTIPLIER
+        # - Inactive → ×1.2
+        # - Light → ×1.4
+        # - Moderate → ×1.6
+        # - Active → ×1.8
+        if activity_var.get() == "Inactive":
             calories *= 1.2
-    elif activity_var.get() == "Light":
+        elif activity_var.get() == "Light":
             calories *= 1.4
-    elif activity_var.get() == "Moderate":
+        elif activity_var.get() == "Moderate":
             calories *= 1.6
-    elif activity_var.get() == Active:
+        elif activity_var.get() == "Active":
             calories *= 1.8
-        
 
-# DISPLAY RESULT ON SCREEN
+        # DISPLAY RESULT ON SCREEN
+        result_label.config(text=f"Calories: {int(calories)}")
+
+    except:
+        result_label.config(text="Enter valid numbers")
+
+tk.Button(root, text="Calculate", command=calculate).pack()
 
 # RUN PROGRAM
 root.mainloop()
