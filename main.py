@@ -41,6 +41,8 @@ goal_var.set("Maintain")
 tk.Radiobutton(root, text="Lose weight", variable=goal_var, value="Lose").pack()
 tk.Radiobutton(root, text="Maintain weight", variable=goal_var, value="Maintain").pack()
 tk.Radiobutton(root, text="Gain weight", variable=goal_var, value="Gain").pack()
+low_carb_var = tk.BooleanVar()
+tk.Checkbutton(root, text="Low carb diet", variable=low_carb_var).pack()
 # CREATE CALCULATE BUTTON
 
 # Shows results
@@ -79,6 +81,9 @@ def calculate():
             calories *= 1.6
         elif activity_var.get() == "Active":
             calories *= 1.8
+        # APPLY LOW CARB OPTION
+        if low_carb_var.get():
+            calories -= 100
 
         # DISPLAY RESULT ON SCREEN
         result_label.config(text=f"Calories: {int(calories)}")
