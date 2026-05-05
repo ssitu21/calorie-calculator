@@ -71,6 +71,15 @@ def calculate():
 # - Light → ×1.4
 # - Moderate → ×1.6
 # - Active → ×1.8
+    if activity_var.get() == "Inactive":
+            calories *= 1.2
+    elif activity_var.get() == "Light":
+            calories *= 1.4
+    elif activity_var.get() == "Moderate":
+            calories *= 1.6
+    elif activity_var.get() == Active:
+            calories *= 1.8
+        
 
 # DISPLAY RESULT ON SCREEN
 
