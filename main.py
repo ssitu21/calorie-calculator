@@ -43,6 +43,7 @@ tk.Radiobutton(root, text="Maintain weight", variable=goal_var, value="Maintain"
 tk.Radiobutton(root, text="Gain weight", variable=goal_var, value="Gain").pack()
 low_carb_var = tk.BooleanVar()
 tk.Checkbutton(root, text="Low carb diet", variable=low_carb_var).pack()
+
 # CREATE CALCULATE BUTTON
 
 # Shows results
@@ -52,11 +53,17 @@ result_label.pack()
 # WHEN BUTTON CLICKED
 def calculate():
     try:
-        # - Get weight input
+        # - Get Weight, Age and Height
         weight = float(weight_entry.get())
+        age = float(age_entry.get())
+        height = float(height_entry.get())
 
-        # - Calculate base calories = weight × 22
+        # - Calculate base calories = weight × 22   
         calories = weight * 22
+        # - Calculate base calories = calories + (2x height)
+        calories += (height * 2)
+        # - Calculate base calroeis = calorieis = calories - (3X age)
+        calories -= (age * 3)
 
         # IF goal = lose weight
         # subtract 300 calories
@@ -81,6 +88,7 @@ def calculate():
             calories *= 1.6
         elif activity_var.get() == "Active":
             calories *= 1.8
+
         # APPLY LOW CARB OPTION
         if low_carb_var.get():
             calories -= 100
